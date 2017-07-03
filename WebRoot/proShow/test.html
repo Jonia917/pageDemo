@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style>
+	#mytest{
+		width:800px;
+		display: inline-block;
+		height:600px;
+		border:1px solid #eee;
+		background-color:#eeeccc;
+		overflow-y: auto;
+	}
+	</style>
+  </head>
+
+<body>
+	<div id="mytest" contenteditable="true"></div>
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script src="../js/base64.js"></script>
+	<script type="text/javascript">
+    	var width = 200;
+		document.getElementById('mytest').addEventListener('paste',function(e){
+	 		var cbd = e.clipboardData;
+	 		if(cbd && cbd.items && cbd.items.length>0){
+	 			var len = cbd.items.length;
+	 			for(var i=0;i<len;i++){
+	 				var item = cbd.items[i];
+	        		if(item.kind == "file"){//如果是文件,判断文件的长度
+	        			var blob = item.getAsFile();
+			            if (blob.size === 0) {
+			                return false;
+			            }
+			            var reader = new FileReader();
+						var imgs = new Image(); 
+						imgs.file = blob;
+						reader.onload = (function(aImg) {
+					      return function(e) {
+					       	 	aImg.src = e.target.result;
+								aImg.onload = function(){
+								 	alert('width = ' + aImg.width + ' , height =' + aImg.height);
+								};
+					      };
+					    })(imgs);
+					    reader.readAsDataURL(blob);
+					    document.getElementById('mytest').appendChild(imgs);
+	        		}
+	        		//文本的话，kind为string type为text/plain,直接粘贴
+	 			}
+	 		}else{
+	 			return false;
+	 		}
+		}, false);
+	</script>
+</body>
+</html>

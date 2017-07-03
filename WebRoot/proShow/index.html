@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>主页面</title>
+	<meta charset="utf-8"></meta
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!-- Bootstrap core CSS -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
+    <link href="../css/page.css" rel="stylesheet"></link>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/page.js"></script>
+  </head>
+  
+  <body>
+  	<section>
+  	 	<header>
+  	 		 <!-- Header -->
+		     <nav class="navbar navbar-default navbar-fixed-top" data-role="navigation">
+		          <div class="container">
+		               <div class="menu-container page-scroll">
+		                    <a class="navbar-brand" href="#body">
+		                         <img id="mainlogo" src="../imgs/etlworks.png" alt="Cloud data integration - Etlworks">
+		                    </a>
+		               </div>
+		               <div class="collapse navbar-collapse">
+		                    <div class="menu-container">
+		                         <ul id="mainMenu" class="nav navbar-nav"></ul>
+		                    </div>
+		               </div>
+		               <!-- /.navbar-collapse -->
+		          </div>
+		          <!-- /.container -->
+		     </nav>
+		     <!-- End Header -->
+  	 	</header>
+  	 </section>
+  	 
+  	 <!--sidebar start-->
+      <aside id="aside-left">
+          <div id="sidebar-left"  class="nav-collapse">
+              <!-- sidebar menu start-->
+              <ul id="left_submenus" class="nav nav-pills nav-stacked ssubmenu"></ul>
+              <!-- sidebar menu end-->
+          </div>
+     </aside>
+     <!--sidebar end-->
+      
+     <!--sidebar start-->
+     <aside  id="aside-right"  style="position:absolute;z-index: 200;right:0px;">
+         <div id=sidebar-right  class="nav-collapse">
+             <!-- sidebar menu start-->
+             <ul class="sidebar-menu" id="nav-accordion">
+             </ul>
+             <!-- sidebar menu end-->
+         </div>
+     </aside>
+     <!--sidebar end-->
+  	 
+     <section id="main-content">
+     	  <section id="linknaver">
+     	  	<div id="navi_img">
+     	  		<img alt="图片加载失败" src="../imgs/arrow_right.png" title="隐藏左侧菜单" id="leftmenu_img" class="closed">
+	     	  	<ul class="breadcrumb linknav" id="navi_link">  
+	          	  	<li><a href="#">首页</a></li>
+	          	  	<li><a href="#">类库</a></li>
+	          	  	<li class="active">数据</li>
+	          	</ul>
+          	</div>
+     	  </section>
+     	  <section id="iframeset" class="wrapper">
+     	  		<iframe id="contentframe" name="contentframe"></iframe>
+          </section>
+          
+          <!--footer start-->
+	      <footer class="site-footer">
+	          <div class="text-center">
+	          	2017 - Alvarez.is
+	          </div>
+	      </footer>
+	      <!--footer end-->
+     </section>
+  </body>
+</html>
